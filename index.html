@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEALTHY LIFE</title>
+  <!-- Fonte -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
+  <!-- Progress Bar -->
+  <script src="progressbar.min.js"></script>
+  <!-- Parallax -->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    .container {
+      padding: 70px 0;
+    }
+
+    p,
+    li {
+      color: #494949;
+      font-size: 14px;
+    }
+
+    header,
+    .navbar {
+      background-color: rgba(51, 177, 1, 0.603)
+    }
+
+    #nav-container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    #logo {
+      width: 75px;
+    }
+
+    .navbar-brand {
+      padding: 0;
+      color: #FFF;
+    }
+
+    .navbar-brand:hover {
+      color: #FFF;
+    }
+
+    #navbar-links a {
+      color: #FFF;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 1rem .8rem;
+    }
+
+    .nav-item.active {
+      border-bottom: 3px solid #FFF;
+    }
+
+
+    .container-fluid {
+      padding: 0;
+    }
+
+    #mainSlider .carousel-inner,
+    #mainSlider .carousel-item {
+      height: 100vh;
+    }
+
+    #mainSlider .carousel-caption {
+      top: 30%;
+    }
+
+    #mainSlider .carousel-caption h2 {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    #mainSlider .carousel-caption p {
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 100px;
+      color: #FFF;
+    }
+
+    .main-btn {
+      background-color: #388d00;
+      color: #FFF;
+      text-transform: uppercase;
+      width: 200px;
+      height: 60px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 3px solid transparent;
+      transition: .5s;
+    }
+
+    .main-btn:hover {
+      text-decoration: none;
+      color: #FFF;
+      background-color: transparent;
+      border-color: #388d00;
+    }
+
+    .carousel-indicators .active {
+      background-color: #388d00;
+    }
+
+    #about-area {
+      background-color: #F9F9F9;
+    }
+
+    .main-title {
+      color: #444;
+      margin: 0 0 65px 0;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .main-title::after {
+      content: "";
+      border-top: 2px solid #333;
+      width: 15%;
+      position: absolute;
+      top: 60px;
+      left: 42.5%;
+    }
+
+    .about-title {
+      font-size: 17px;
+      color: #444;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    #about-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #about-list li {
+      line-height: 30px;
+    }
+
+    #about-list i {
+      color: #388d00;
+      margin-right: 15px;
+    }
+
+
+    .service-box {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .service-box i,
+    .service-box h4 {
+      transition: .5s;
+    }
+
+    .service-box i {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .service-box h4 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-box:hover>i,
+    .service-box:hover>h4 {
+      color: #388d00;
+    }
+
+
+    .circle-box div {
+      padding: 0 40px;
+    }
+
+    .progressbar-text {
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    #data-area p {
+      color: #000000;
+      text-align: center;
+      font-size: 26px;
+      margin-top: 20px;
+    }
+
+
+    .card-body {
+      text-align: center;
+    }
+
+
+    #apply-area {
+      height: 500px;
+    }
+
+    #apply-area .container-fluid,
+    #apply-area .row {
+      height: 100%;
+    }
+
+    #apply-area .apply-box {
+      padding: 70px 50px;
+      text-align: center;
+    }
+
+    #company-img {
+      background-image: url('/img/obesidade.png');
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    #pattern-img {
+      background-image: url('img/fundo2.png');
+    }
+
+    #pattern-img p {
+      color: #FFF;
+      text-align: justify;
+    }
+
+    #pattern-img h4 {
+      margin-top: 8%;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #FFF;
+    }
+
+    #pattern-img p {
+      margin-bottom: 20px;
+    }
+
+    #apply-btn {
+      display: block;
+      height: auto;
+      width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      background-color: transparent;
+      border-color: #FFF;
+    }
+
+    #apply-btn:hover {
+      border-color: #388d00;
+      background-color: #388d00;
+    }
+
+    /* Portfólio */
+
+    .project-box {
+      margin-bottom: 30px;
+    }
+
+    #filter-btn-box {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    #portfolio-area .filter-btn {
+      color: #444;
+      border: 1px solid #444;
+      background-color: transparent;
+      text-transform: none;
+      margin: 0 15px;
+      min-width: 100px;
+      width: auto;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+    }
+
+    #portfolio-area .filter-btn.active,
+    #portfolio-area .filter-btn:hover {
+      color: #FFF;
+      border: 1px solid #388d00;
+      background-color: #388d00;
+    }
+
+
+
+    #news-area {
+      text-align: center;
+      background-color: #F9F9F9;
+    }
+
+    #news-area p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    #email-input {
+      border-radius: 0;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border: 1px solid #388d00;
+      display: inline;
+      box-sizing: border-box;
+      width: 40%;
+      height: 40px;
+    }
+
+    #news-btn {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border: 1px solid #388d00;
+      background-color: #388d00;
+      color: #FFF;
+      text-transform: uppercase;
+      height: 40px;
+      padding: 0 30px;
+      margin-left: -130px;
+      position: absolute;
+      transition: .5s;
+    }
+
+    #news-btn:hover {
+      background-color: #FFF;
+      color: #000000;
+    }
+
+    /* Call To Action */
+
+    #call-area {
+      background-color: #388d00;
+      text-transform: uppercase;
+    }
+
+    #call-area .container {
+      padding: 40px 100px;
+    }
+
+    #call-area .row {
+      display: block;
+      text-align: center;
+    }
+
+    #call-area p {
+      color: #FFF;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 0;
+      height: 60px;
+      line-height: 60px;
+      letter-spacing: 2px;
+      display: inline;
+    }
+
+    #call-area #call-btn {
+      background-color: #FFF;
+      color: #000000;
+      font-weight: bold;
+      margin-left: 30px;
+      font-size: 20px;
+      width: auto;
+      letter-spacing: 2px;
+    }
+
+    /* Footer */
+
+    #contact-area {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      border-bottom: 1px solid #388d00;
+    }
+
+    .contact-box i {
+      color: #444;
+      border: solid 1px #444;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+    }
+
+    .contact-tile {
+      font-weight: bold;
+      color: #388d00;
+    }
+
+    #msg-box p {
+      font-size: 22px;
+    }
+
+    #contact-form {
+      text-align: center;
+    }
+
+    #contact-form input[type="text"],
+    #contact-form textarea {
+      margin-bottom: 15px;
+      border-radius: 0;
+    }
+
+    #contact-form .main-btn {
+      width: 120px;
+      height: 50px;
+    }
+
+    #contact-form .main-btn:hover {
+      color: #388d00;
+    }
+
+    /* Copy */
+
+    #copy-area {
+      background-color: #F1F1F1;
+    }
+
+    #copy-area .container {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    #copy-area .container p {
+      margin-bottom: 0;
+    }
+
+    #copy-area .container a {
+      font-weight: bold;
+      color: #444;
+    }
+
+    #copy-area .container a:hover {
+      text-decoration: none;
+      color: #388d00;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #388d00;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+
+    /* responsive */
+    @media(max-width: 768px) {
+
+      /* geral */
+      .container {
+        padding: 20px 0;
+      }
+
+      /* slider */
+      #mainSlider .carousel-inner,
+      #mainSlider .carousel-item {
+        height: auto;
+      }
+
+      #mainSlider .carousel-caption h2 {
+        font-size: 28px;
+      }
+
+      #mainSlider .carousel-caption p {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+
+      .carousel-caption {
+        left: 10%;
+        right: 10%;
+      }
+
+      /* about */
+      #about-area img {
+        margin-top: 100px;
+      }
+
+      /* data */
+      .circle-box div {
+        padding: 0 10px;
+      }
+
+      #data-area p {
+        font-size: 16px;
+      }
+
+      /* team */
+      .card-title {
+        font-size: 14px;
+      }
+
+      .card-text {
+        font-size: 12px;
+      }
+
+      /* apply */
+      #apply-area .apply-box {
+        padding: 50px 25px;
+      }
+
+      /* news */
+      #news-area p {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #email-input {
+        width: 70%;
+      }
+
+      #call-area {
+        margin-top: 30px;
+      }
+
+      #call-area .container {
+        padding: 30px;
+      }
+
+      #call-area p,
+      #call-area #call-btn {
+        font-size: 16px;
+      }
+
+    }
+
+
+    @media(max-width: 425px) {
+
+      /* slider */
+      #mainSlider {
+        margin-top: 90px;
+      }
+
+      #mainSlider .carousel-caption {
+        top: 5%;
+      }
+
+      #mainSlider .carousel-caption h2 {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+
+      #mainSlider .carousel-caption p {
+        display: none;
+      }
+
+      .carousel-caption .main-btn {
+
+        font-size: 14px;
+      }
+
+      /* about */
+      .main-title {
+        font-size: 30px;
+      }
+
+      #about-area img {
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      /* data */
+      .circle-box {
+        width: 50%;
+      }
+
+      #team-area .col-md-3 {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+
+      /* apply */
+      #apply-area {
+        height: auto;
+      }
+
+      #company-img {
+        display: none;
+      }
+
+      /* filter */
+      #portfolio-area .filter-btn {
+        margin-bottom: 20px;
+      }
+
+      .project-box {
+        width: 50%;
+      }
+
+      /* news */
+      #news-area .main-title {
+        font-size: 24px;
+      }
+
+      #news-area p {
+        font-size: 16px;
+      }
+
+      #email-input {
+        width: 80%;
+      }
+
+      #call-area p,
+      #call-area #call-btn {
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      #call-area p,
+      #call-area #call-btn {
+        margin: 0;
+        width: 50%;
+      }
+
+      /* contact */
+      .contact-box {
+        border: none;
+        margin-bottom: 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+    <header>
+      <div class="container" id="nav-container">
+        <!--add essa class-->
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" src="img/logo.png" alt="Logo Pocket Health"> POCKET HEALTH
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+            aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+            <span> class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" id="home-menu" href="#">Início</span></a>
+              <a class="nav-item nav-link" id="services-menu" href="imc.html">Calcular IMC</a>
+              <a class="nav-item nav-link" id="about-menu" href="rotina.html">Crie sua Rotina de Exercícios</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <!--Sobre a empressa-->
+        <div id="about-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <h3 class="main-title">BEM VINDO AO POCKET HEALTH</h3>
+              </div>
+              <div class="col-md-6">
+                <img class="img-fluid" src="img/saudavel.png" alt="Imagem com atributos saudáveis">
+              </div>
+              <div class="col-md-6">
+                <h3 class="about-title"> Aqui no nosso site você encontrará informações e recursos úteis relacionados a
+                  nutrição e um estilo de vida saudável, como:</h3>
+                <ul id="about-list">
+                  <li><i class="fas fa-check"></i> CALCULADORA DE <a href="imc.html">IMC</a></li>
+                  <li><i class="fas fa-check"></i> GERENCIADOR DE <a href="rotina.html">ROTINA DE EXERCÍCIOS</a></li>
+                  <li><i class="fas fa-check"></i> INFORMAÇÕES SOBRE OBESIDADE </li>
+                  <li><i class="fas fa-check"></i> BOAS PRÁTICAS DE UM ESTILO DE VIDA SAUDÁVEL</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dados sobre a obesidade -->
+        <div id="data-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleA"></div>
+                <p>O índice de obesidade é de 22% entre o sexo masculino</p>
+              </div>
+              <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleB"></div>
+                <p>O índice de obesidade é de 22,6% entre o sexo feminino</p>
+              </div>
+              <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleC"></div>
+                <p>O índice de sobrepeso é de 59,9% entre o sexo masculino</p>
+              </div>
+              <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleD"></div>
+                <p>O índice de sobrepeso é de 55% entre o sexo feminino</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Obesidade infantil -->
+        <div id="apply-area">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 apply-box" id="company-img"></div>
+              <div class="col-md-6 apply-box" id="pattern-img">
+                <h4>OBESIDADE INFANTIL</h4>
+                <p>As crianças em geral ganham peso com facilidade devido a fatores tais como: hábitos alimentares
+                  errados, inclinação genética, estilo de vida sedentário, distúrbios psicológicos, problemas na
+                  convivência familiar entre outros.</p><br>
+                <p>A vida sedentária facilitada pelos avanços tecnológicos (computadores, televisão, videogames, etc.),
+                  fazem com que as crianças não precisem se esforçar fisicamente a nada. Hoje em dia, ao contrário de
+                  alguns anos atrás, as crianças devido a violência urbana a pedido de seus pais, ficam dentro de casa
+                  com atividades que não as estimulam fazer atividades físicas como correr, jogar bola, brincar de pique
+                  etc., levando-as a passarem horas paradas enfrente a uma tv ou outro equipamento eletrônico e quase
+                  sempre com um pacote de biscoito ou um sanduíche regados a refrigerantes. Isto é um fator preocupante
+                  para o desenvolvimento da obesidade.</p><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Práticas saudáveis-->]
+        <div id="services-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="main-title">PRÁTICAS PARA UM ESTILO DE VIDA MAIS SAUDÁVEL</h3>
+              </div>
+              <div class="col-md-4 service-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                  class="bi bi-lungs-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8 1a.5.5 0 0 1 .5.5v5.243L9 7.1V4.72C9 3.77 9.77 3 10.72 3c.524 0 1.023.27 1.443.592.431.332.847.773 1.216 1.229.736.908 1.347 1.946 1.58 2.48.176.405.393 1.16.556 2.011.165.857.283 1.857.24 2.759-.04.867-.232 1.79-.837 2.33-.67.6-1.622.556-2.741-.004l-1.795-.897A2.5 2.5 0 0 1 9 11.264V8.329l-1-.715-1 .715V7.214c-.1 0-.202.03-.29.093l-2.5 1.786a.5.5 0 1 0 .58.814L7 8.329v2.935A2.5 2.5 0 0 1 5.618 13.5l-1.795.897c-1.12.56-2.07.603-2.741.004-.605-.54-.798-1.463-.838-2.33-.042-.902.076-1.902.24-2.759.164-.852.38-1.606.558-2.012.232-.533.843-1.571 1.579-2.479.37-.456.785-.897 1.216-1.229C4.257 3.27 4.756 3 5.28 3 6.23 3 7 3.77 7 4.72V7.1l.5-.357V1.5A.5.5 0 0 1 8 1m3.21 8.907a.5.5 0 1 0 .58-.814l-2.5-1.786A.498.498 0 0 0 9 7.214V8.33l2.21 1.578Z" />
+                </svg>
+                <h4>Rotina Saudável</h4>
+                <p>Uma rotinha saudável é um fator importante na busca por uma qualidade de vida , juntamente com
+                  prática de exercícios físicos, a alimentação saudável também contribui para um funcionamento melhor do
+                  seu corpo e mente. Com a ajuda de um gerenciador de tarefas , fica muito mais simples a adaptação e a
+                  frequência nessa busca por uma nova rotina , já que no início é difícil para começarmos.</p>
+              </div>
+              <div class="col-md-4 service-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-basket3"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z" />
+                </svg>
+                <h4>Alimentação saudável e cuidados que se deve quando fazer compras</h4>
+                <p>Uma alimentação saudável traz diversos benefícios para nosso organismo, como a melhora na imunidade,
+                  humor e uma boa qualidade do sono, aumentando também a disposição, a regulação do nosso intestino e a
+                  manutenção do peso. Na hora das compras priorize a começar na seção de vegetais ,hortaliças, legumes e
+                  frutas frescos e depois ir selecionar carnes, laticínios e produtos frescos de padaria , e evitar
+                  alimentos muito processados .</p>
+              </div>
+              <div class="col-md-4 service-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                  class="bi bi-building" viewBox="0 0 16 16">
+                  <path
+                    d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                  <path
+                    d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+                </svg>
+                <h4>A importância de exercícios físicos</h4>
+                <p>Visam o aumento do gradiente de saúde da população, à diminuição do sedentarismo e a melhoria da
+                  qualidade de vida. A atividade física previne o desenvolvimento de doenças crônicas, como hipertensão
+                  e diabetes. Além disso, controlam os níveis de colesterol, ajuda no tratamento da depressão e
+                  ansiedade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Alimentos não saudáveis -->
+        <div id="team-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="main-title">Alimentos que parecem saudáveis mas não são:</h3>
+              </div>
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="img/granola.gif" class="card-img-top" alt="Granola">
+                  <div class="card-body">
+                    <h5 class="card-title">Granola</h5>
+                    <p class="card-text">Na teoria, ela contém uma mistura de alimentos que são saudáveis, como aveia.
+                      Mas, na maior parte dos casos, a granola é rica em açúcar, gorduras adicionadas e sódio. Isso
+                      causa um aumento da ingestão de calorias e pode prejudicar a saúde do coração. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="img/iogurte.gif" class="card-img-top" alt="Iogurte">
+                  <div class="card-body">
+                    <h5 class="card-title">Iogurte com Sabor</h5>
+                    <p class="card-text">O iogurte, por si só, é um alimento saudável, porém ao adicionar o sabor, são
+                      adicionadas também grandes quantidades de açúcar e corantes artificiais. Com isso, eles deixam de
+                      ser benéficos. O recomendado é escolher iogurtes naturais e adicionar frutas frescas para dar
+                      sabor.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="img/peitoperu.gif" class="card-img-top" alt="Peito de Peru">
+                  <div class="card-body">
+                    <h5 class="card-title">Peito de Peru</h5>
+                    <p class="card-text">Esse tipo de frios, que é comprado, principalmente, em padarias e
+                      supermercados, é rico em sódio, açúcar e aditivos químicos. Então, apesar de ser muito utilizado
+                      por ter a fama de ser leve e pelo fato do peru ser saudável, o peito de peru não é. Ele entra na
+                      categoria dos ultraprocessados e embutidos, então, no final das contas, ele não é tão diferente de
+                      um presunto ou de uma mortadela.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="img/barraceral.gif" class="card-img-top" alt="Barra de Cereal">
+                  <div class="card-body">
+                    <h5 class="card-title">Barras de Cereal</h5>
+                    <p class="card-text">Esses produtos geralmente chamam a atenção por aparentarem ser saudáveis, terem
+                      diversos sabores e pela praticidade. Realmente, existem algumas barrinhas que contém baixas
+                      calorias, são fonte de fibras, dão energia, aumentam a sensação de saciedade e ajudam no
+                      funcionamento do intestino. Entretanto, não é o caso da maioria das marcas, que oferecem produtos
+                      com uma grande quantidade de gordura, açúcar, calorias e que não têm fibras.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Call to Action-->
+        <div id="call-area">
+          <div class="container">
+
+          </div>
+        </div>
+    </main>
+    <!--Rodapé-->
+    <footer>
+      <div id="contact-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="main-title">Entre em contato conosco</h3>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-phone"></i>
+              <p><span class="contact-tile">Ligue para:</span> (32)4002-8922</p>
+              <p><span class="contact-tile">Horários:</span> 8:00 - 19:00</p>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-envelope"></i>
+              <p><span class="contact-tile">Envie um email:</span> x123@gmail.com.br</p>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-map-marker-alt"></i>
+              <p><span class="contact-tile">Venha conhecer nossa empresa:</span> Rua Dos Bobos - 0</p>
+            </div>
+
+            <div class="col-md-6" id="contact-form">
+              <h1>Faça Cadastro</h1>
+              <form action="/submit" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <input type="submit" value="Enviar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="copy-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p>Desenvolvido por <a href="www.linkedin.com/in/beatriz-kronemberger-158833248"
+                  target="_blank">Beatriz</a> e <a
+                  href="https://www.linkedin.com/in/yuri-cristian-de-souza-chagas-557a6522b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Yuri</a>
+                &copy; 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Scripts do projeto-->
+    <script src="js/scripts.js"></script>
+  </body>
+</body>
+
+</html>
